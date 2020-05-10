@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
+</head>
+<a href="tables.html">Töflur</a>
+
+<body>
+    <div class="wrapper">
+        <main>
+            <article class="mainarticle">
+                <div class="register">
+                    <form action="#" method="GET">
+                        <fieldset>
+                            <legend>Verkefni 7</legend>
+                            <label>
+                Nafn*
+                <input type="text" name="nafn" placeholder="Full name" required="" autofocus="" title="Vinsamlegast skráið nafn" /> <!--ATH! input hefur ekki lokunartag -->
+            </label>
+                            <label>
+                Símanúmer*
+                <input type="text" name="sími" placeholder="123 4567" title="Vinsamlegast skráið aðeins 7 tölustafi" required="" pattern="\d{3}(?:[\-\s]?)\d{4}" />
+            </label>
+                            <label>
+                Tölvupóstur*
+                <input type="email" name="tölvupóstur" placeholder="Email address" required="" />
+                </label>
+                            <label>
+                Dagsetning*
+                <input type="date" name="dagsetning" required="" />
+            </label>
+                            <br />
+                            <label>
+                Fjöldi 
+                <select name="fjöldi">
+                    <option value="0" selected=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                stykki
+            </label>
+                            <br />
+                            <label for="árgerð">
+                    Árgerð:
+                    <input type="checkbox" name="árgerð 1" value="1965" /> 1965, 
+                    <input type="checkbox" name="árgerð 2" value="1985" /> 1985. 
+            </label>
+                            <br />
+                            <label for="litur">
+                    Litur:
+                    <input type="radio" name="litur" value="Rauður" /> Rauður,  
+                    <input type="radio" name="litur" value="Svartur" /> Svartur. 
+            </label>
+                            <label>
+            <br />
+                Athugasemdir
+                <textarea rows="4" name="Athugasemdir"></textarea>
+            </label>
+                            <input type="submit" name="submit" value="Panta" />
+                        </fieldset>
+                    </form>
+                </div>
+        </main>
+        <footer>
+            <p><small>&copy; Steinþór Emil Svavarsson</a></small></p>
+        </footer>
+    </div>
+</body>
+
+</html>

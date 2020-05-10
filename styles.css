@@ -1,0 +1,362 @@
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.5
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+    color: #0B3E7A
+}
+
+a:visited {
+    color: orangered
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+header {
+    grid-area: header
+}
+
+main {
+    grid-area: main
+}
+
+footer {
+    grid-area: footer
+}
+
+article {
+    grid-area: article
+}
+
+aside {
+    grid-area: aside
+}
+
+.vinstri {
+    grid-area: vinstri
+}
+
+.haegri {
+    grid-area: haegri
+}
+
+.midja {
+    grid-area: midja
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 0;
+    grid-template-areas: "header" "main" "footer";
+    margin: 0 1em 3em 1em
+}
+
+main {
+    display: grid;
+    grid-gap: 0;
+    grid-template-areas: "article" "aside"
+}
+
+.headwrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3.5em;
+    width: 102%;
+    background-color: #333;
+    border: 0;
+    box-shadow: 0 0 1em #ddd
+}
+
+.headmenu {
+    width: 100%;
+    padding: 0 1em
+}
+
+header h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 2em;
+    text-align: left;
+    margin: 2.5em .5em .2em .5em
+}
+
+.midja h5,
+.midja small {
+    display: none
+}
+
+@media screen and (min-width: 37.5em) {
+    header h1 {
+        font-size: 3em;
+        text-align: center;
+        margin: 1.5em 0 .2em 0
+    }
+    main {
+        grid-template-areas: "aside article";
+        grid-template-columns: 1fr 2fr
+    }
+    article {
+        padding: .5em 1em
+    }
+    aside {
+        border-right: 1px solid orangered;
+        padding-right: 1em
+    }
+    .asidemenu {
+        margin-top: 0
+    }
+    .mainarticle {
+        margin-top: -2em
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .midja h5,
+    .midja small {
+        display: block;
+        margin-top: 0
+    }
+    main {
+        grid-template-areas: "aside article";
+        grid-template-columns: 1fr 3fr
+    }
+    article {
+        padding: .5em 2em
+    }
+    .mtop-2em {
+        margin-top: -1.3em
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .wrapper {
+        max-width: 60em;
+        margin: 0 auto
+    }
+    .headmenu {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        width: 60em;
+        margin: 0 auto;
+        padding: 0
+    }
+    .topnav {
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-end
+    }
+    header h1 {
+        font-size: 4em;
+        text-align: center;
+        margin: 1.5em 0 .5em 0
+    }
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto
+}
+
+figure {
+    margin: 0
+}
+
+.menuInput {
+    display: none
+}
+
+.menuLabel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 2.5em;
+    height: 1.6em;
+    color: #0B3E7A;
+    font-size: 1.5em;
+    text-align: left;
+    padding: .5em;
+    transition: all .4s ease;
+    z-index: 999
+}
+
+.menuInput:checked+.menuLabel {
+    transform: translate(-23px, -3px) rotate(-90deg);
+    transition: all .5s ease
+}
+
+.menuInput:checked~.topmenu {
+    position: fixed;
+    top: 3em;
+    right: 0;
+    z-index: 980;
+    transition: all .5s ease
+}
+
+table {
+    border: 1px solid rgb(255, 0, 0);
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em
+}
+
+table tr {
+    background: #000000f5;
+    border: 1px solid #bbb;
+    padding: .35em
+}
+
+table th,
+table td {
+    padding: .625em
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    text-align: center
+}
+
+tbody tr:nth-child(odd) {
+    background: #3f3f3f
+}
+
+@media screen and (max-width: 60em) {
+    table {
+        border: 0
+    }
+    table caption {
+        font-size: 1.3em
+    }
+    table thead {
+        display: none
+    }
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em
+    }
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right
+    }
+    table td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase
+    }
+    table td:last-child {
+        border-bottom: 0
+    }
+}
+
+.register form {
+    margin-bottom: 1em
+}
+
+.register legend {
+    font-weight: bold
+}
+
+.register fieldset {
+    border: 1px solid #aaa;
+    border-radius: .5em;
+    padding: 1em;
+    margin: 1em 0
+}
+
+.register label {
+    color: #688;
+    cursor: pointer;
+    font-weight: 400
+}
+
+.register input,
+.register select,
+.register textarea {
+    border: 1px solid #c6c9cc;
+    border-radius: 5px;
+    color: #444;
+    display: inline;
+    margin: 5px 0 1em 0;
+    padding: 5px 8px
+}
+
+.register select {
+    height: 2em;
+    width: 5em
+}
+
+.register input[type=text],
+.register input[type=tel],
+.register input[type=email],
+.register textarea {
+    width: 100%
+}
+
+.register textarea {
+    font-family: monospace
+}
+
+.register input[type=submit] {
+    background-color: #700;
+    background: linear-gradient(#273827, #507150 90%, #273827);
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: .5em 1em;
+    margin: 0 0 0 5em;
+    border-radius: .3em
+}
+
+.register input[type=submit]:hover,
+.register input[type=submit]:active {
+    background: linear-gradient(to bottom, #667, #330);
+    color: #bbb
+}
+
+@media screen and (min-width: 48em) {
+    .register form {
+        max-width: 30em
+    }
+    .register fieldset {
+        padding: 1em 2em
+    }
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url("../fonts/icomoon.eot?pu6i3z");
+    src: url("../fonts/icomoon.eot?pu6i3z#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?pu6i3z") format("truetype"), url("../fonts/icomoon.woff?pu6i3z") format("woff"), url("../fonts/icomoon.svg?pu6i3z#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
